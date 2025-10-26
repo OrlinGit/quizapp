@@ -1,14 +1,17 @@
-package bg.quiz.app.models;
+package bg.quiz.app.model;
 
 import java.util.List;
 
 public class Question {
 
-    public String id;
-    public String questionText;
-    public List<String> options;
-    public int correctAnswer;
+    private String id;
+    private String questionText;
+    private List<String> options;
+    private int correctAnswer;
 
+    /*
+    I had to add the non-arguments constructor so the class can deserialize the JSON file
+     */
     public Question() {
     }
 
