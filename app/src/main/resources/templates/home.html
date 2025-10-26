@@ -8,18 +8,18 @@
     <h1>Welcome to the Quiz app</h1>
 
     <main th:if="${questions != null}">
-        <form method = "get" action="/home">
+        <form method = "post" action="/home">
         <ol>
             <li th:each="question, iterStat : ${questions}">
                 <p th:text="${question.questionText}"></p>
-                <ul>
+                <ol>
                     <li th:each="option, optStat : ${question.options}">
                         <input type="radio" th:id="'opt' + ${optStat.index}"
                             th:name="'answer' + ${iterStat.index}"
                         th:value="${optStat.index}">
                         <label th:for="'opt' + ${optStat.index}" th:text="${option}"></label>
                     </li>
-                </ul>
+                </ol>
             </li>
         </ol>
             <button type="submit">Submit</button>
