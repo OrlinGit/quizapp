@@ -1,26 +1,29 @@
-package bg.quizz.app.models;
+package bg.quiz.app.models;
 
 import java.util.List;
 
 public class Question {
 
-    public int id;
+    public String id;
     public String questionText;
     public List<String> options;
-    public String correctAnswer;
+    public int correctAnswer;
 
-    public Question(int id, String questionText, List<String> options, String correctAnswer) {
+    public Question() {
+    }
+
+    public Question(String id, String questionText, List<String> options, int correctAnswer) {
         this.id = id;
         this.questionText = questionText;
         this.options = options;
         this.correctAnswer = correctAnswer;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -40,11 +43,11 @@ public class Question {
         this.options = options;
     }
 
-    public String getCorrectAnswer() {
+    public int getCorrectAnswer() {
         return correctAnswer;
     }
 
-    public void setCorrectAnswer(String correctAnswer) {
+    public void setCorrectAnswer(int correctAnswer) {
         this.correctAnswer = correctAnswer;
     }
 }

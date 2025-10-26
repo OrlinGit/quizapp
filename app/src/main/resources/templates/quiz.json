@@ -1,0 +1,99 @@
+[
+  {
+    "id": "java-basics",
+    "title": "Java Basics Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "questionText": "Which keyword is used to define a class in Java?",
+        "options": ["class", "Class", "define", "struct"],
+        "correctAnswer": 0
+      },
+      {
+        "id": "q2",
+        "questionText": "Which method is the entry point of a Java application?",
+        "options": ["start()", "main()", "init()", "run()"],
+        "correctAnswer": 1
+      },
+      {
+        "id": "q3",
+        "questionText": "What is the default value of a boolean in Java?",
+        "options": ["true", "false", "0", "null"],
+        "correctAnswer": 1
+      },
+      {
+        "id": "q4",
+        "questionText": "Which operator is used for comparison in Java?",
+        "options": ["=", "==", "equals", "==="],
+        "correctAnswer": 1
+      },
+      {
+        "id": "q5",
+        "questionText": "Which annotation is used to define a Spring Controller?",
+        "options": ["@Component", "@Controller", "@RestService", "@MVCController"],
+        "correctAnswer": 1
+      },
+      {
+        "id": "q6",
+        "questionText": "Which loop is guaranteed to execute at least once?",
+        "options": ["for", "while", "do-while", "foreach"],
+        "correctAnswer": 2
+      },
+      {
+        "id": "q7",
+        "questionText": "Which data type is used to store decimal numbers in Java?",
+        "options": ["int", "double", "boolean", "char"],
+        "correctAnswer": 1
+      },
+      {
+        "id": "q8",
+        "questionText": "What does JVM stand for?",
+        "options": ["Java Virtual Machine", "Java Variable Method", "Java Version Manager", "Java View Module"],
+        "correctAnswer": 0
+      },
+      {
+        "id": "q9",
+        "questionText": "Which keyword is used to inherit a class?",
+        "options": ["extends", "implements", "inherits", "super"],
+        "correctAnswer": 0
+      },
+      {
+        "id": "q10",
+        "questionText": "What is the correct way to create an array in Java?",
+        "options": ["int[] arr = new int[5];", "int arr = new int[5];",
+            "int arr[] = int[5];", "array<int> arr = new array<int>();"],
+        "correctAnswer": 0
+      },
+      {
+        "id": "q11",
+        "questionText": "Which method in Spring MVC returns a view?",
+        "options": ["display()", "show()", "view()", "render()"],
+        "correctAnswer": 2
+      },
+      {
+        "id": "q12",
+        "questionText": "Which part of MVC handles user input?",
+        "options": ["Model", "View", "Controller", "Template"],
+        "correctAnswer": 2
+      },
+      {
+        "id": "q13",
+        "questionText": "Which Java collection allows duplicate elements?",
+        "options": ["Set", "Map", "List", "Queue"],
+        "correctAnswer": 2
+      },
+      {
+        "id": "q14",
+        "questionText": "Which statement is used to handle exceptions?",
+        "options": ["try-catch", "if-else", "switch", "throw-catch"],
+        "correctAnswer": 0
+      },
+      {
+        "id": "q15",
+        "questionText": "Which method is used to get the size of a List?",
+        "options": ["length()", "size()", "count()", "getSize()"],
+        "correctAnswer": 1
+      }
+    ]
+  }
+]
