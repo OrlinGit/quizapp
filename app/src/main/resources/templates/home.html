@@ -6,14 +6,30 @@
 </head>
 <body>
     <h1>Welcome to the Quiz app</h1>
-    <ul>
-        <li th:each="quiz : ${quiz}">
-            <h2 th:text="${quiz.id}"></h2>
-            <ul>
-                <li th:each="question : ${quiz.questions}" th:text="${question.questionText}"></li>
-            </ul>
-        </li>
 
-    </ul>
+    <main th:if="${questions != null}">
+        <form method = "get" action="/home">
+        <ol>
+            <li th:each="question, iterStat : ${questions}">
+                <p th:text="${question.questionText}"></p>
+                <ul>
+                    <li th:each="option, optStat : ${question.options}">
+                        <input type="radio" th:id="'opt' + ${optStat.index}"
+                            th:name="'answer' + ${iterStat.index}"
+                        th:value="${optStat.index}">
+                        <label th:for="'opt' + ${optStat.index}" th:text="${option}"></label>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+            <button type="submit">Submit</button>
+            <a href="/home">Retake Quiz</a>
+        </form>
+    </main>
+
+    <main th:if="${questions == null}">
+        <p>No questions available</p>
+    </main>
+
 </body>
 </html>

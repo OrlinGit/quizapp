@@ -13,4 +13,11 @@ public class Quiz {
     private String id;
     private List<Question> questions;
 
+
+    /*
+    Lombok did not create this getter for some reason, so I added it manually.
+     */
+    public List<Question> getQuestions() {
+        return questions;
+    }
 }
