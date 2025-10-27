@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Results</title>
 </head>
 <body>
+    <p>Your result is:</p>
+    <p>Correct answers: <span th:text="${correctAnswers}"> </span> from <span th:text="${allAnswers}"></span></p>
 
+
+
+    <p th:if="${QuizPassed}"></p>
+    <p th:text="${finalMessage}"></p>
+    <section th:if="${!wrongAnswers.isEmpty()}"></section>
+        <h3>The questions you answered wrong are:</h3>
+        <ul>
+            <li th:each="wrongQuestion : ${wrongAnswers}">
+                Question <span th:text="${wrongQuestion.key.replace('answer', '')}"></span>
+                The correct answer is: <span th:text="${wrongQuestion.value}"></span>
+
+            </li>
+        </ul>
+    <a href="/home"> Retake quiz</a>
 </body>
 </html>
