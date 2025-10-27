@@ -1,0 +1,118 @@
+/* quiz-results.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    color: #333;
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+    margin: 20px 0;
+}
+
+p, h3 {
+    max-width: 800px;
+    margin: 15px auto;
+}
+
+h3 {
+    color: #d9534f; /* red for headings like "wrong answers" */
+}
+
+ol {
+    max-width: 800px;
+    margin: 5px auto 20px auto;
+    padding-left: 40px;
+}
+
+ol li {
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+ol li ol li {
+    margin-bottom: 8px;
+    background-color: #e9ecef; /* light gray for options */
+    padding: 5px;
+    border-radius: 3px;
+}
+
+span {
+    font-weight: bold;
+    color: #007bff; /* highlight numbers */
+}
+
+a.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 15px auto;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: #28a745; /* green for buttons */
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+a.button-link:hover {
+    background-color: #218838;
+}
+
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fff8e1; /* light yellow for section containing wrong answers */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Correct and wrong answers coloring (optional) */
+.correct {
+    background-color: #d4edda; /* light green */
+}
+
+.wrong {
+    background-color: #f8d7da; /* light red */
+}
+/* Buttons for quiz page */
+button[type="submit"], a.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 15px 10px 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Submit button */
+button[type="submit"] {
+    background-color: #007bff; /* blue */
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Retake quiz link styled as button */
+a.button-link, a[href="/home"] {
+    background-color: #6c757d; /* gray */
+    color: white;
+}
+
+a.button-link:hover, a[href="/home"]:hover {
+    background-color: #5a6268;
+}
