@@ -8,29 +8,29 @@
 <body>
     <h1>Welcome to the Quiz app</h1>
 
-    <main th:if="${questions != null}">
+    <main th:if="${currentQuestion != null}">
         <form method = "post" action="/submit">
-        <ol>
-            <li th:each="question, iterStat : ${questions}">
-                <p th:text="${question.questionText}"></p>
-                <ol>
-                    <li th:each="option, optStat : ${question.options}">
-                        <input type="radio" th:id="'opt' + ${optStat.index}"
-                            th:name="'answer' + ${iterStat.index}"
-                        th:value="${optStat.index}">
-                        <label th:for="'opt' + ${optStat.index}" th:text="${option}"></label>
-                    </li>
-                </ol>
-            </li>
-        </ol>
-            <button type="submit">Submit</button>
-            <a href="/home">Retake Quiz</a>
+            <p>Question <span th:text="${question + 1}"></span> /
+                <span th:text=${"allQuestions"}></span></p>
+
+        <p th:text="${currentQuestion.questionText}"></p>
+
+            <ol type="A">
+                <li th:each="option, optStat : ${currentQuestion.options}">
+                    <input type="radio"
+                           th:id="'opt' + ${optStat.index}"
+                           th:name="'answer' + ${question}"
+                           th:value="${optStat.index}">
+                    <label th:for="'opt' + ${optStat.index}" th:text="${option}"></label>
+                </li>
+            </ol>
+
+            <div>
+                <a th:if="${question > 0}" th:href="@{/home(question=${question - 1})}">Previous</a>
+                <a th:if="${question + 1 < allQuestions}" th:href="@{/home(question=${question + 1})}">Next</a>
+                <button type="submit" th:if="${question + 1 == allQuestions}">Submit Quiz</button>
+            </div>
         </form>
     </main>
-
-    <main th:if="${questions == null}">
-        <p>No questions available</p>
-    </main>
-
 </body>
 </html>

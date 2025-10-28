@@ -25,12 +25,20 @@ public class HomeController {
     }
 
     @GetMapping({"/", "/home"})
-    public String home(Model model){
+    public String home(@RequestParam(defaultValue = "0") int question, Model model){
         List<Quiz> quizList = quizService.getQuiz();
-        if (quizList.isEmpty()){
-            model.addAttribute("questions", null);
+
+        if(quizList.isEmpty()){
+            model.addAttribute("message", "There are no questions loaded in the quiz!");
+            return "home";
+        }
+        List<Question> questions = quizList.get(0).getQuestions();
+        if (questions.isEmpty()){
+            model.addAttribute("message", "The Quiz is empty!");
         } else {
-            model.addAttribute("questions", quizList.get(0).getQuestions());
+            model.addAttribute("allQuestions", questions.size());
+            model.addAttribute("question", question);
+            model.addAttribute("currentQuestion", questions.get(question));
         }
 
         return "home";
