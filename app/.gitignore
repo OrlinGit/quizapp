@@ -39,3 +39,4 @@ build/
 *.jar
 *.war
 *.ear
+*.jar.original
